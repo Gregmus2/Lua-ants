@@ -4,7 +4,7 @@ require('menu')
 
 AIs = {}
 local teamColors = {'red', 'blue', 'yellow', 'green', 'aqua', 'white', 'silver', 'orange'}
-for f in io.popen("dir bots /B"):lines() do
+for f in io.popen("dir bots -1"):lines() do
   local bot = require('bots/' .. string.sub(f, 0, string.find(f, '.lua') - 1))
   if type(bot) ~= 'boolean' then
     table.insert(AIs, bot)
